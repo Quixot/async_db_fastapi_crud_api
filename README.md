@@ -9,3 +9,5 @@ pip install fastapi sqlalchemy[asyncio] uvicorn[standard] alembic aiosqlite
 **alembic** init -t **async** alembic  
 **alembic** revision --autogenerate -m "first revision"  
 **alembic** upgrade head  
+
+# Glory to Ukraine!
