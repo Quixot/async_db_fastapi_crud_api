@@ -1,42 +1,37 @@
+from typing import Optional
+
 from pydantic import BaseModel
 
 
 # Shared properties
-class ItemBase(BaseModel):
-    title: str
+class CategoryBase(BaseModel):
+    title: Optional[str] = None
 
 
 # Properties to receive on item creation
-class ItemCreate(ItemBase):
+class CategoryCreate(CategoryBase):
     title: str
-    description: str
-    status: bool
-    price: float
 
 
 # Properties to receive on item update
-class ItemUpdate(ItemBase):
+class CategoryUpdate(CategoryBase):
     pass
 
 
 # Properties shared by models stored in DB
-class ItemInDBBase(ItemBase):
+class CategoryInDBBase(CategoryBase):
     id: int
     title: str
-    description: str
-    status: bool
-    price: float
-    category_id: int
 
     class Config:
         orm_mode = True
 
 
 # Properties to return to client
-class Item(ItemInDBBase):
+class Category(CategoryInDBBase):
     pass
 
 
 # Properties properties stored in DB
-class ItemInDB(ItemInDBBase):
+class CategoryInDB(CategoryInDBBase):
     pass

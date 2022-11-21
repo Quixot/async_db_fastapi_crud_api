@@ -1,17 +1,13 @@
+from typing import TYPE_CHECKING
+
 from sqlalchemy import Column, Integer, Float, Boolean, String, Text, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
-from datetime import datetime
-
 from db.base_class import Base
 
-
-class Category(Base):
-    id = Column(Integer, index=True, primary_key=True, unique=True)
-    title = Column(String(128))
-
-    item = relationship("Item", back_populates="category")
+if TYPE_CHECKING:
+    from .category import Category  # noqa
 
 
 class Item(Base):
