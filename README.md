@@ -6,8 +6,8 @@ pip install fastapi sqlalchemy[asyncio] uvicorn[standard] alembic aiosqlite
 **git** remote add origin https://github.com/<addres_to_repo>  
 **git** push -u origin master
 
-**alembic** init -t **async** alembic
-alembic.ini
+**alembic** init -t **async** alembic  
+alembic.ini  
 ...  
 sqlalchemy.url = sqlite:///./database.db  
 
@@ -17,6 +17,6 @@ from database import Base
 import models  
 target_metadata = Base.metadata  
 
-**alembic** revision --autogenerate -m "First Revision"
-**alembic** upgrade head  
-**alembic** upgrade 123
+**alembic** revision --autogenerate -m "First Revision"  
+**alembic** upgrade head   
+**alembic** upgrade 123  
