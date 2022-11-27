@@ -9,7 +9,7 @@ pip install fastapi sqlalchemy[asyncio] uvicorn[standard] alembic aiosqlite
 **alembic** init -t **async** alembic  
 alembic.ini  
 ...  
-sqlalchemy.url = sqlite:///./database.db  
+sqlalchemy.url = sqlite+aiosqlite:///./database.db  
 
 env.py  
 ...  
